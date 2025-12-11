@@ -6,6 +6,10 @@ import { Checkbox } from './ui/checkbox';
 import { Input } from './ui/input';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
 import { ChevronDown } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const StockPOPage = () => {
   const [poData, setPOData] = useState(null);
