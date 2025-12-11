@@ -123,13 +123,42 @@ const StockPOPage = () => {
     setPOData({ ...poData, items: updatedItems });
   };
 
-  const handleCreateDelivery = () => {
-    alert(`Creating delivery for ${selectedItems.length} selected items`);
+  const handleCreateDelivery = async () => {
+    try {
+      const selectedItemsData = poData.items
+        .filter(item => item.selected)
+        .map(item => ({
+          itemId: item.id,
+          quantity: item.qtyToBeReceived,
+          batchNumber: item.batchNumber || null
+        }));
+
+      const deliveryData = {
+        poNumber: poData.poNumber,
+        items: selectedItemsData
+      };
+
+      const response = await axios.post(`${API}/delivery`, deliveryData);
+      alert(`Delivery ${response.data.deliveryNumber} created successfully!`);
+      
+      // Refresh PO data
+      await loadPOData();
+      setSelectedItems([]);
+    } catch (error) {
+      console.error('Error creating delivery:', error);
+      alert(`Error creating delivery: ${error.response?.data?.detail || error.message}`);
+    }
   };
 
-  const handleRefresh = () => {
-    alert('Refreshing Purchase Order data...');
-    // Simulate refresh
+  const handleRefresh = async () => {
+    try {
+      await loadPOData();
+      setSelectedItems([]);
+      alert('Purchase Order data refreshed successfully!');
+    } catch (error) {
+      console.error('Error refreshing data:', error);
+      alert('Error refreshing Purchase Order data');
+    }
   };
 
   const handleNavBack = () => {
