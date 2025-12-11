@@ -1,0 +1,151 @@
+{
+	"mockData": {
+		"purchaseOrder": {
+			"poNumber": "4800000878",
+			"supplierRisk": "N/A",
+			"status": "Open",
+			"vendor": {
+				"code": "602814",
+				"name": "Fisher Scientific UK",
+				"address": "Bishop Meadow Road, Loughborough, LE11 5RG, LEC, GB",
+				"country": "GB",
+				"region": "LEC",
+				"postalCode": "LE11 5RG",
+				"city": "Loughborough",
+				"street": "Bishop Meadow Road"
+			},
+			"createdBy": "KMURARISETTY",
+			"createdOn": "09/26/2025",
+			"companyCode": "3141",
+			"purchaseOrg": "ZDIR",
+			"currency": "GBP",
+			"totalValue": "125000.00",
+			"items": [
+				{
+					"selected": false,
+					"item": "10",
+					"materialCode": "36000330",
+					"materialDescription": "VIAL 40ML TOC WITH CAP",
+					"materialType": "ZRAW",
+					"materialGroup": "LAB001",
+					"openQuantity": "99994",
+					"openQuantityUnit": "PAK",
+					"originalQuantity": "100000",
+					"qtyToBeReceived": "99994",
+					"buomQuantity": "7199568",
+					"buomUnit": "EA",
+					"conversionFactor": "72",
+					"batchNumber": "",
+					"batchManaged": true,
+					"recInQI": "",
+					"qiRequired": false,
+					"vendorMaterialNo": "15173488",
+					"plant": "GB01",
+					"plantDescription": "London Plant",
+					"storageLocation": "WH01",
+					"storageLocationDescription": "Warehouse EWM",
+					"storageType": "EWM",
+					"hazardousMaterial": "FLAMMABLE",
+					"isHazardous": true,
+					"hazardClass": "3",
+					"unNumber": "UN1234",
+					"netPrice": "0.75",
+					"priceUnit": "1",
+					"currency": "GBP",
+					"lineValue": "75000.00",
+					"deliveryDate": "2025-10-15",
+					"lastReceiptDate": null,
+					"totalReceived": "6"
+				},
+				{
+					"selected": false,
+					"item": "20",
+					"materialCode": "M0180",
+					"materialDescription": "Pipette, 25mL Poly Serological",
+					"materialType": "ZRAW",
+					"materialGroup": "LAB002",
+					"openQuantity": "999999",
+					"openQuantityUnit": "CS",
+					"originalQuantity": "1000000",
+					"qtyToBeReceived": "999999",
+					"buomQuantity": "3999996",
+					"buomUnit": "PAK",
+					"conversionFactor": "4",
+					"batchNumber": "",
+					"batchManaged": true,
+					"recInQI": "",
+					"qiRequired": false,
+					"vendorMaterialNo": "11517752",
+					"plant": "GB01",
+					"plantDescription": "London Plant",
+					"storageLocation": "WH01",
+					"storageLocationDescription": "Warehouse EWM",
+					"storageType": "EWM",
+					"hazardousMaterial": "",
+					"isHazardous": false,
+					"hazardClass": "",
+					"unNumber": "",
+					"netPrice": "0.05",
+					"priceUnit": "1",
+					"currency": "GBP",
+					"lineValue": "50000.00",
+					"deliveryDate": "2025-10-20",
+					"lastReceiptDate": null,
+					"totalReceived": "1"
+				}
+			],
+			"selectedItemsCount": 0,
+			"hasSelectedItems": false,
+			"totalItems": 2
+		},
+		"batchTemplates": [
+			{
+				"batchNumber": "BT001234567",
+				"materialCode": "36000330",
+				"plant": "GB01",
+				"storageLocation": "WH01",
+				"manufacturingDate": "2025-08-15",
+				"expirationDate": "2027-08-15",
+				"vendorBatch": "VB-BT001234567",
+				"availableQuantity": "1000",
+				"unit": "EA",
+				"status": "Available",
+				"additionalInfo": "High purity grade material"
+			},
+			{
+				"batchNumber": "BT001234568",
+				"materialCode": "M0180",
+				"plant": "GB01",
+				"storageLocation": "WH01",
+				"manufacturingDate": "2025-08-20",
+				"expirationDate": "2028-08-20",
+				"vendorBatch": "VB-BT001234568",
+				"availableQuantity": "5000",
+				"unit": "PAK",
+				"status": "Available",
+				"additionalInfo": "Standard laboratory consumable"
+			}
+		],
+		"deliveryOptions": {
+			"shippingPoints": [
+				{
+					"code": "SP01",
+					"name": "Main Shipping Point",
+					"plant": "GB01"
+				}
+			],
+			"deliveryTypes": [
+				{
+					"code": "LF",
+					"name": "Standard Delivery",
+					"leadTime": "2"
+				},
+				{
+					"code": "EX",
+					"name": "Express Delivery",
+					"leadTime": "1"
+				}
+			]
+		}
+	}
+}

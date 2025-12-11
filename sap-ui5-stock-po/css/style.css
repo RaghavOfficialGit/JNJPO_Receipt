@@ -1,0 +1,390 @@
+/* SAP UI5 Stock PO Application Styles */
+
+/* Global Application Styles */
+.stockPOApp {
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+}
+
+/* Header Styles - Matching SAP Fiori Design */
+.stockPOHeader {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.stockPOTitle {
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #32363a;
+    margin: 0;
+}
+
+.backNavigation {
+    color: #0854a0;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.backNavigation:hover {
+    color: #085cbb;
+    text-decoration: underline;
+}
+
+/* Purchase Order Header Section */
+.poHeaderSection {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.poNumber {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #32363a;
+    margin: 0.5rem 0;
+}
+
+.supplierRisk {
+    font-size: 1rem;
+    color: #32363a;
+    font-weight: 400;
+}
+
+.sectionLabel {
+    font-size: 0.875rem;
+    color: #6a6d70;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/* Vendor Information Styles */
+.vendorInfo {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.vendorInfo .sapMLabel {
+    color: #6a6d70;
+    font-weight: 400;
+}
+
+.vendorInfo .sapMText {
+    color: #32363a;
+    font-weight: 400;
+}
+
+/* Purchase Order Items Panel */
+.poItemsPanel {
+    margin: 1rem 0;
+}
+
+.poItemsPanel .sapMPanelHdr {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #32363a;
+}
+
+/* Table Styles - Matching SAP Fiori Design */
+.poItemsTable {
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.poItemsTable .sapMListTbl {
+    border: 1px solid #e5e5e5;
+}
+
+.poItemsTable .sapMListTblHeader {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.poItemsTable .sapMListTblHeaderCell {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #32363a;
+    border-right: 1px solid #e5e5e5;
+}
+
+.poItemsTable .sapMListTblCell {
+    padding: 1rem;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #f2f2f2;
+    vertical-align: top;
+}
+
+.poItemsTable .sapMListTblRow:hover {
+    background-color: #f7f9fb;
+}
+
+/* Material Code and Description */
+.materialCode {
+    font-size: 0.875rem;
+    color: #0854a0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.materialCode:hover {
+    color: #085cbb;
+    text-decoration: underline;
+}
+
+.materialDescription {
+    font-size: 0.875rem;
+    color: #6a6d70;
+    margin-top: 0.25rem;
+}
+
+/* Quantity Fields */
+.quantityField {
+    font-size: 0.875rem;
+    color: #32363a;
+    font-weight: 400;
+    text-align: right;
+}
+
+.quantityInput {
+    width: 100%;
+    max-width: 6rem;
+}
+
+.quantityInput .sapMInputBaseInner {
+    text-align: right;
+    border: 1px solid #89919a;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.quantityInput .sapMInputBaseInner:focus {
+    border-color: #0854a0;
+    box-shadow: 0 0 0 0.125rem rgba(8, 84, 160, 0.25);
+}
+
+/* Create Batch Link */
+.createBatchLink {
+    color: #0854a0;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.createBatchLink:hover {
+    color: #085cbb;
+    text-decoration: underline;
+}
+
+/* Plant and Storage Location */
+.plantInfo {
+    font-size: 0.875rem;
+    color: #32363a;
+    font-weight: 400;
+}
+
+.storageLocationInfo {
+    font-size: 0.875rem;
+    color: #32363a;
+    font-weight: 400;
+}
+
+.warehouseIcon {
+    color: #6a6d70;
+    margin-left: 0.25rem;
+}
+
+/* Hazardous Material */
+.hazardousMaterial {
+    color: #d9480f;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hazardousMaterial:hover {
+    color: #b7400f;
+    text-decoration: underline;
+}
+
+/* Footer Toolbar */
+.footerToolbar {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    padding: 1rem 2rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.refreshButton {
+    color: #6a6d70;
+}
+
+.refreshButton:hover {
+    color: #32363a;
+}
+
+/* Create Delivery Button */
+.createDeliveryButton {
+    background-color: #0854a0;
+    border-color: #0854a0;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+.createDeliveryButton:hover:not(:disabled) {
+    background-color: #085cbb;
+    border-color: #085cbb;
+}
+
+.createDeliveryButton:disabled {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #89919a;
+    cursor: not-allowed;
+}
+
+/* Batch Dialog Styles */
+.batchDialog .sapMDialog {
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.24);
+}
+
+.batchDialog .sapMDialogTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #32363a;
+    padding: 1.5rem 2rem 1rem;
+}
+
+.batchDialog .sapMDialogContent {
+    padding: 0 2rem;
+}
+
+.batchDialog .sapMLabel {
+    color: #32363a;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.batchDialog .sapMLabel::after {
+    content: " *";
+    color: #d9480f;
+}
+
+.batchDialog .sapMInput,
+.batchDialog .sapMDatePicker,
+.batchDialog .sapMTextArea {
+    width: 100%;
+}
+
+.batchDialog .sapMInputBaseInner {
+    border: 1px solid #89919a;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+}
+
+.batchDialog .sapMInputBaseInner:focus {
+    border-color: #0854a0;
+    box-shadow: 0 0 0 0.125rem rgba(8, 84, 160, 0.25);
+}
+
+.batchDialog .sapMDialogFooter {
+    padding: 1rem 2rem 1.5rem;
+    text-align: right;
+}
+
+.batchDialog .sapMBtn {
+    margin-left: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stockPOHeader {
+        padding: 1rem;
+    }
+    
+    .poHeaderSection,
+    .vendorInfo {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .poNumber {
+        font-size: 1.5rem;
+    }
+    
+    .poItemsTable .sapMListTblCell {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .footerToolbar {
+        padding: 1rem;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .stockPOApp {
+        background-color: #ffffff;
+    }
+    
+    .poHeaderSection,
+    .vendorInfo,
+    .poItemsTable {
+        border: 2px solid #000000;
+    }
+    
+    .createBatchLink,
+    .materialCode {
+        color: #0000ff;
+        font-weight: 700;
+    }
+    
+    .hazardousMaterial {
+        color: #ff0000;
+        font-weight: 700;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .stockPOApp {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    
+    .footerToolbar,
+    .backNavigation,
+    .refreshButton,
+    .createDeliveryButton {
+        display: none;
+    }
+    
+    .poItemsTable {
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+    
+    .createBatchLink,
+    .hazardousMaterial {
+        color: #000000;
+        text-decoration: underline;
+    }
+}

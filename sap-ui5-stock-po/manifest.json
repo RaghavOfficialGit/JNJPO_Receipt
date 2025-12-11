@@ -1,0 +1,164 @@
+{
+	"_version": "1.58.0",
+	"sap.app": {
+		"id": "com.company.stockpo",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"dependencies": {
+			"minUI5Version": "1.60.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.f": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"dataSource": "i18n",
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.company.stockpo.i18n.i18n"
+				}
+			},
+			"poService": {
+				"dataSource": "purchaseOrderService",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
+			"batchService": {
+				"dataSource": "batchManagementService",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
+			"deliveryService": {
+				"dataSource": "deliveryManagementService",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.company.stockpo.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "home",
+					"pattern": "",
+					"target": [
+						"home"
+					]
+				},
+				{
+					"name": "stockPO",
+					"pattern": "stockpo/{poNumber}",
+					"target": [
+						"stockPO"
+					]
+				}
+			],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "home",
+					"viewName": "Home"
+				},
+				"stockPO": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "stockPO",
+					"viewName": "StockPO"
+				}
+			}
+		}
+	},
+	"sap.app/dataSources": {
+		"purchaseOrderService": {
+			"uri": "/sap/opu/odata/sap/ZPO_MANAGEMENT_SRV/",
+			"type": "OData",
+			"settings": {
+				"annotations": [],
+				"localUri": "localService/metadata.xml",
+				"odataVersion": "2.0"
+			}
+		},
+		"batchManagementService": {
+			"uri": "/sap/opu/odata/sap/ZBATCH_MANAGEMENT_SRV/",
+			"type": "OData",
+			"settings": {
+				"annotations": [],
+				"localUri": "localService/batchMetadata.xml",
+				"odataVersion": "2.0"
+			}
+		},
+		"deliveryManagementService": {
+			"uri": "/sap/opu/odata/sap/ZDELIVERY_MANAGEMENT_SRV/",
+			"type": "OData",
+			"settings": {
+				"annotations": [],
+				"localUri": "localService/deliveryMetadata.xml",
+				"odataVersion": "2.0"
+			}
+		},
+		"i18n": {
+			"uri": "i18n/i18n.properties",
+			"type": "ResourceBundle"
+		}
+	}
+}
