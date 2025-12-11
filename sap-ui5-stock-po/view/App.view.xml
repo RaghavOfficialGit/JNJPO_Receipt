@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName="com.company.stockpo.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	
+	<App id="app">
+		<!-- The App control will contain the routed views -->
+	</App>
+	
+</mvc:View>

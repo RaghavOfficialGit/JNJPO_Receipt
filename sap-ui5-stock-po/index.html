@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP UI5 Stock PO Application</title>
+    
+    <!-- SAP UI5 Bootstrap -->
+    <script id="sap-ui-bootstrap"
+        src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m,sap.ui.core,sap.ui.layout,sap.f"
+        data-sap-ui-resourceroots='{
+            "com.company.stockpo": "./"
+        }'
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-async="true"
+        data-sap-ui-preload="async"
+        data-sap-ui-xx-waitForTheme="true">
+    </script>
+    
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            // Initialize the UI5 application
+            new sap.ui.core.ComponentContainer({
+                name: "com.company.stockpo",
+                settings: {
+                    id: "stockPOApp"
+                }
+            }).placeAt("content");
+        });
+    </script>
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "72", "72full", Arial, Helvetica, sans-serif;
+        }
+        
+        #content {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="sapUiBody">
+    <div id="content"></div>
+</body>
+</html>
