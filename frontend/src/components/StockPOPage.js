@@ -379,9 +379,15 @@ const StockPOPage = () => {
           onClose={() => setShowBatchDialog(false)}
           item={currentItem}
           onSave={(batchData) => {
-            console.log('Saving batch data:', batchData);
+            console.log('Batch saved:', batchData);
+            // Update the item with the new batch number
+            const updatedItems = poData.items.map(item => 
+              item.id === batchData.itemId 
+                ? { ...item, batchNumber: batchData.batchNumber }
+                : item
+            );
+            setPOData({ ...poData, items: updatedItems });
             setShowBatchDialog(false);
-            // Here you would typically save to backend
           }}
         />
       )}
