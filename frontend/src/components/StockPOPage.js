@@ -18,8 +18,26 @@ const StockPOPage = () => {
   const [currentItem, setCurrentItem] = useState(null);
   const [isItemsSectionOpen, setIsItemsSectionOpen] = useState(true);
 
-  // Mock data matching the screenshot exactly
+  // Load PO data from backend API
   useEffect(() => {
+    loadPOData();
+  }, []);
+
+  const loadPOData = async () => {
+    try {
+      const response = await axios.get(`${API}/po/4800000878`);
+      const data = response.data;
+      // Add selection state to items
+      data.items = data.items.map(item => ({ ...item, selected: false }));
+      setPOData(data);
+    } catch (error) {
+      console.error('Error loading PO data:', error);
+      // Fallback to mock data if API fails
+      loadMockData();
+    }
+  };
+
+  const loadMockData = () => {
     const mockData = {
       poNumber: '4800000878',
       supplierRisk: 'N/A',
@@ -78,7 +96,7 @@ const StockPOPage = () => {
       ]
     };
     setPOData(mockData);
-  }, []);
+  };
 
   const handleItemSelection = (itemId, checked) => {
     const updatedItems = poData.items.map(item => 
