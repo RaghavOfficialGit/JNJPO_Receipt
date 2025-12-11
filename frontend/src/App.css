@@ -1,34 +1,118 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Stock PO Application Styles */
+
+.App {
+  min-height: 100vh;
+  background-color: #fafafa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Custom SAP Fiori-like styles */
+.sap-table {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.sap-table thead {
+  background-color: #f8f9fa;
 }
 
-.App-link {
-    color: #61dafb;
+.sap-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.sap-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.sap-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* SAP-like colors */
+.sap-primary {
+  color: #0854a0;
+}
+
+.sap-primary:hover {
+  color: #085cbb;
+}
+
+.sap-button-primary {
+  background-color: #0854a0;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.sap-button-primary:hover:not(:disabled) {
+  background-color: #085cbb;
+}
+
+.sap-button-primary:disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Material links */
+.material-link {
+  color: #0854a0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.material-link:hover {
+  color: #085cbb;
+  text-decoration: underline;
+}
+
+/* Hazardous material styling */
+.hazardous-material {
+  color: #dc2626;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hazardous-material:hover {
+  text-decoration: underline;
+}
+
+/* Responsive table adjustments */
+@media (max-width: 1024px) {
+  .sap-table {
+    font-size: 0.875rem;
+  }
+  
+  .sap-table th,
+  .sap-table td {
+    padding: 0.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+  
+  .sap-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
 }
