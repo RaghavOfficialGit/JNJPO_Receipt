@@ -1,0 +1,88 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout">
+	
+	<Dialog id="batchDialog"
+		title="Create/Update Batch"
+		contentWidth="400px"
+		contentHeight="500px"
+		draggable="true"
+		resizable="true">
+		
+		<content>
+			<VBox class="sapUiMediumMargin">
+				
+				<!-- Batch Number -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Batch Number *" class="sapUiTinyMarginBottom" />
+					<Input value="{batchModel>/batchNumber}" 
+						placeholder="Enter batch number" 
+						required="true" 
+						maxLength="20" />
+				</VBox>
+				
+				<!-- Manufacturing Date -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Manufacturing Date *" class="sapUiTinyMarginBottom" />
+					<DatePicker value="{batchModel>/manufacturingDate}" 
+						placeholder="Select manufacturing date" 
+						required="true" />
+				</VBox>
+				
+				<!-- Expiration Date -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Expiration Date" class="sapUiTinyMarginBottom" />
+					<DatePicker value="{batchModel>/expirationDate}" 
+						placeholder="Select expiration date" />
+				</VBox>
+				
+				<!-- Vendor Batch -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Vendor Batch" class="sapUiTinyMarginBottom" />
+					<Input value="{batchModel>/vendorBatch}" 
+						placeholder="Enter vendor batch number" 
+						maxLength="20" />
+				</VBox>
+				
+				<!-- Additional Information -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Additional Information" class="sapUiTinyMarginBottom" />
+					<TextArea value="{batchModel>/additionalInfo}" 
+						placeholder="Enter additional batch information" 
+						rows="3" 
+						maxLength="200" />
+				</VBox>
+				
+				<!-- Material Information (Read-only) -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Material" class="sapUiTinyMarginBottom" />
+					<HBox>
+						<Text text="{batchModel>/currentItem/materialCode}" class="sapUiTinyMarginEnd" />
+						<Text text="-" class="sapUiTinyMarginEnd" />
+						<Text text="{batchModel>/currentItem/materialDescription}" />
+					</HBox>
+				</VBox>
+				
+				<!-- Plant Information (Read-only) -->
+				<VBox class="sapUiMediumMarginBottom">
+					<Label text="Plant / Storage Location" class="sapUiTinyMarginBottom" />
+					<HBox>
+						<Text text="{batchModel>/currentItem/plant}" class="sapUiTinyMarginEnd" />
+						<Text text="/" class="sapUiTinyMarginEnd" />
+						<Text text="{batchModel>/currentItem/storageLocation}" />
+					</HBox>
+				</VBox>
+				
+			</VBox>
+		</content>
+		
+		<buttons>
+			<Button text="Save" press="onSaveBatch" type="Emphasized" />
+			<Button text="Cancel" press="onCancelBatch" />
+		</buttons>
+		
+	</Dialog>
+	
+</core:FragmentDefinition>

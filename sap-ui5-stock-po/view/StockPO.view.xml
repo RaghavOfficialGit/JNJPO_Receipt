@@ -1,0 +1,157 @@
+<mvc:View
+	controllerName="com.company.stockpo.controller.StockPO"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout">
+	
+	<Page title="" showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveMargin">
+		
+		<!-- Header Navigation -->
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack" type="Transparent" />
+					<Title text="Stock PO" class="sapUiMediumMarginBegin" />
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		
+		<content>
+			<VBox class="sapUiMediumMargin">
+				
+				<!-- Purchase Order Header Section -->
+				<HBox justifyContent="SpaceBetween" alignItems="Start" class="sapUiMediumMarginBottom">
+					<VBox>
+						<Label text="Purchase Order" class="sapUiTinyMarginBottom" />
+						<Title text="{poModel>/poNumber}" level="H1" class="sapUiLargeMarginBottom" />
+					</VBox>
+					<Text text="Supplier Risk: {poModel>/supplierRisk}" class="sapUiMediumMarginTop" />
+				</HBox>
+				
+				<!-- Vendor Information Section -->
+				<VBox class="sapUiLargeMarginBottom">
+					<HBox class="sapUiTinyMarginBottom">
+						<Label text="Vendor: " class="sapUiTinyMarginEnd" />
+						<Text text="{poModel>/vendor/code} {poModel>/vendor/name}" />
+					</HBox>
+					<HBox class="sapUiTinyMarginBottom">
+						<Label text="Vendor Address: " class="sapUiTinyMarginEnd" />
+						<Text text="{poModel>/vendor/address}" />
+					</HBox>
+					<HBox class="sapUiTinyMarginBottom">
+						<Label text="Created By / On: " class="sapUiTinyMarginEnd" />
+						<Text text="{poModel>/createdBy} / {poModel>/createdOn}" />
+					</HBox>
+					<HBox>
+						<Label text="Company Code / Purchase Org: " class="sapUiTinyMarginEnd" />
+						<Text text="{poModel>/companyCode} / {poModel>/purchaseOrg}" />
+					</HBox>
+				</VBox>
+				
+				<!-- Purchase Order Items Section -->
+				<Panel expandable="true" expanded="true" headerText="Purchase Order Items ({poModel>/items/length})" class="sapUiResponsiveMargin">
+					<content>
+						<!-- Items Table -->
+						<Table id="poItemsTable" 
+							items="{poModel>/items}" 
+							mode="MultiSelect" 
+							class="sapUiResponsiveMargin">
+							
+							<columns>
+								<Column width="4rem">
+									<Text text="Select" />
+								</Column>
+								<Column width="5rem">
+									<Text text="Item" />
+								</Column>
+								<Column width="12rem">
+									<Text text="Material" />
+								</Column>
+								<Column width="8rem">
+									<Text text="Open Quantity" />
+								</Column>
+								<Column width="8rem">
+									<Text text="Qty to be Received" />
+								</Column>
+								<Column width="8rem">
+									<Text text="BUoM Quantity" />
+								</Column>
+								<Column width="8rem">
+									<Text text="Batch" />
+								</Column>
+								<Column width="6rem">
+									<Text text="Rec. in QI" />
+								</Column>
+								<Column width="8rem">
+									<Text text="Vendor Material No." />
+								</Column>
+								<Column width="6rem">
+									<Text text="Plant" />
+								</Column>
+								<Column width="10rem">
+									<Text text="SLoc" />
+								</Column>
+								<Column width="8rem">
+									<Text text="Haz. Material" />
+								</Column>
+							</columns>
+							
+							<items>
+								<ColumnListItem>
+									<cells>
+										<CheckBox selected="{poModel>selected}" />
+										<Text text="{poModel>item}" />
+										<VBox>
+											<Text text="{poModel>materialCode}" />
+											<Text text="{poModel>materialDescription}" class="sapUiTinyMarginTop" />
+										</VBox>
+										<HBox>
+											<Text text="{poModel>openQuantity}" class="sapUiTinyMarginEnd" />
+											<Text text="{poModel>openQuantityUnit}" />
+										</HBox>
+										<Input value="{poModel>qtyToBeReceived}" type="Number" class="sapUiTinyMargin" width="6rem" />
+										<HBox>
+											<Text text="{poModel>buomQuantity}" class="sapUiTinyMarginEnd" />
+											<Text text="{poModel>buomUnit}" />
+										</HBox>
+										<Link text="Create Batch" press="onCreateBatch" class="sapUiTinyMargin" />
+										<Text text="{poModel>recInQI}" />
+										<Text text="{poModel>vendorMaterialNo}" />
+										<VBox>
+											<Text text="{poModel>plant}" />
+											<Text text="{poModel>plantDescription}" class="sapUiTinyMarginTop" />
+										</VBox>
+										<VBox>
+											<HBox>
+												<Text text="{poModel>storageLocation}" class="sapUiTinyMarginEnd" />
+												<core:Icon src="sap-icon://warehouse" class="sapUiTinyMarginStart" />
+											</HBox>
+											<Text text="{poModel>storageLocationDescription}" class="sapUiTinyMarginTop" />
+										</VBox>
+										<Link text="{poModel>hazardousMaterial}" enabled="{poModel>isHazardous}" class="sapUiTinyMargin" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Panel>
+				
+			</VBox>
+		</content>
+		
+		<!-- Footer Toolbar -->
+		<footer>
+			<Toolbar>
+				<content>
+					<Button icon="sap-icon://refresh" press="onRefresh" type="Transparent" />
+					<ToolbarSpacer />
+					<Button text="Create Delivery ({poModel>/selectedItemsCount})" press="onCreateDelivery" type="Emphasized" enabled="{poModel>/hasSelectedItems}" />
+				</content>
+			</Toolbar>
+		</footer>
+		
+	</Page>
+	
+</mvc:View>
