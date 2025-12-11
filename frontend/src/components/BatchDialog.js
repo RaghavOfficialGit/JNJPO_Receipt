@@ -65,15 +65,32 @@ const BatchDialog = ({ isOpen, onClose, item, onSave }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (validateForm()) {
-      onSave({
-        ...formData,
-        itemId: item?.id,
-        materialCode: item?.materialCode,
-        plant: item?.plant,
-        storageLocation: item?.storageLocation
-      });
+      try {
+        const batchData = {
+          batchNumber: formData.batchNumber,
+          manufacturingDate: formData.manufacturingDate,
+          expirationDate: formData.expirationDate || null,
+          vendorBatch: formData.vendorBatch || null,
+          additionalInfo: formData.additionalInfo || null,
+          materialCode: item.materialCode,
+          plant: item.plant,
+          storageLocation: item.storageLocation
+        };
+
+        const response = await axios.post(`${API}/batch`, batchData);
+        
+        onSave({
+          ...response.data,
+          itemId: item.id
+        });
+        
+        alert(`Batch ${response.data.batchNumber} created successfully!`);
+      } catch (error) {
+        console.error('Error creating batch:', error);
+        alert(`Error creating batch: ${error.response?.data?.detail || error.message}`);
+      }
     }
   };
 
